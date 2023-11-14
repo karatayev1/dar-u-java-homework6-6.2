@@ -161,15 +161,15 @@ public class Main {
 
         // Homework 6.2
         // Task 9.1
-        int[][] myIntsFrom = {{10, 20, 30}, {40, 50 ,60}};
+        int[][] myIntsFrom = {{10, 20, 30}, {40, 50, 60}};
         int[][] myIntsTo = new int[3][2];
 
-        for (int i =0; i < myIntsFrom.length; i++) {
+        for (int i = 0; i < myIntsFrom.length; i++) {
             for (int j = 0; j < myIntsFrom[1].length; j++) {
                 myIntsTo[j][i] = myIntsFrom[i][j];
             }
         }
-        for (int i = 0; i < myIntsTo.length; i++ ) {
+        for (int i = 0; i < myIntsTo.length; i++) {
             for (int j = 0; j < myIntsTo[1].length; j++) {
                 System.out.print(myIntsTo[i][j] + " ");
             }
@@ -181,12 +181,12 @@ public class Main {
         int[][] myArrayFrom = {{4, 2, 1}, {2, 7, 2}};
         int[][] myArrayTo = new int[3][2];
 
-        for (int i =0; i < myArrayFrom.length; i++) {
+        for (int i = 0; i < myArrayFrom.length; i++) {
             for (int j = 0; j < myArrayFrom[1].length; j++) {
                 myArrayTo[j][i] = myArrayFrom[i][j];
             }
         }
-        for (int i = 0; i < myArrayTo.length; i++ ) {
+        for (int i = 0; i < myArrayTo.length; i++) {
             for (int j = 0; j < myArrayTo[1].length; j++) {
                 System.out.print(myArrayTo[i][j] + " ");
             }
@@ -255,7 +255,7 @@ public class Main {
         System.out.println("------");
 
         // Task add 1
-        int[][] massiv = {{50, 80, 10},{20, 90, 30}};
+        int[][] massiv = {{50, 80, 10}, {20, 90, 30}};
         int search = 30;
 
         for (int i = 0; i < massiv.length; i++) {
@@ -281,7 +281,7 @@ public class Main {
         System.out.println("------");
 
         // Task add 3
-        int arrOrig[][] = {{1,2,3,4}, {5,6,7,8}};
+        int arrOrig[][] = {{1, 2, 3, 4}, {5, 6, 7, 8}};
         int row = arrOrig.length;
         int column = arrOrig[0].length;
         int[][] arrTranspose = new int[column][row];
@@ -320,15 +320,41 @@ public class Main {
         System.out.println("------");
 
         // Task add 5
-        /*int[][]  arrSort = {{5, 8, 9}, {4, 1, 3}};
+        int[][] a = {{4, 1, 3, 34, 56},
+                {9, 8, 5, 38, 99},
+                {7, 2, 6, 65, 43},
+                {4, 5, 7, 23, 55},
+                {1, 7, 3, 56, 22}};
+        int d = a.length;
+        int v = a[1].length;
+        int tmp;
 
-        Arrays.sort(arrSort);
-        for (int i = 0; i < arrSort.length; i++) {
-            for (int j = 0; j < arrSort.length; j++) {
-                System.out.print(Arrays.toString(arrSort));
+        for (int t = 0; t <= (d * v); t++) {
+            for (int i = 0; i < d; i++) {
+                for (int j = 0; j < v - 1; j++) {
+                    if (a[i][j] > a[i][j + 1]) {
+                        tmp = a[i][j];
+                        a[i][j] = a[i][j + 1];
+                        a[i][j + 1] = tmp;
+                    }
+                    if (i < v - 1) {
+                        if (a[i][j + 1] > a[i + 1][0]) {
+                            tmp = a[i][j + 1];
+                            a[i][j + 1] = a[i + 1][0];
+                            a[i + 1][0] = tmp;
+                        }
+                    }
+                }
+            }
+        }
+
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a[1].length; j++) {
+                System.out.print(a[i][j] + " ");
             }
             System.out.println();
-        }*/
+        }
+        System.out.println("------");
 
         // Task add 6
         int[][] matrix = {{0, 1, 2}, {1, 5, 3}, {2, 3, 4}};
@@ -336,7 +362,7 @@ public class Main {
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[1].length; j++) {
-                if(i != j && matrix[i][j] != matrix[j][i]) {
+                if (i != j && matrix[i][j] != matrix[j][i]) {
                     symmetric = false;
                 }
             }
@@ -345,6 +371,20 @@ public class Main {
         System.out.println("------");
 
         // Task add 7
+        int[][] arrTurnOrig = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int[][] arrTurnNew = new int[3][3];
+        int l = arrTurnOrig.length;
 
+        for (int i = 0; i < l; i++) {
+            for (int j = 0; j < l; j++) {
+                arrTurnNew[i][j] = arrTurnOrig[l - j - 1][i];
+            }
+        }
+        for (int i = 0; i < arrTurnNew.length; i++) {
+            for (int j = 0; j < arrTurnNew[1].length; j++) {
+                System.out.print(arrTurnNew[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }
